@@ -56,7 +56,7 @@ for i=1:nPop
         GlobalBest=particle(i).Best;
     end
 end
-%array to hold best costs at each step
+%array to hold best cost.s at each step
 BestCosts=zeros(MaxIt,1);
 %% Main Loop of PSO
 for it=1:MaxIt
