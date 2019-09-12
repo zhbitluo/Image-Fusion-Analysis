@@ -8,8 +8,8 @@ I=RGB;
 end
 % convert image to double type. necesarry for sqrt function
 I2 = im2double(I);
-figure
-imshow(I2)
+%figure
+%imshow(I2)
 % M=number of rows; N=number of columns in the image
 M= size(I2,1); 
 N= size(I2,2);
@@ -39,5 +39,6 @@ SF=sqrt(RF^2+CF^2);
 AG = sum(sum(Gmag))./(sqrt(2)*(size(I2,1)-1)*(size(I2,2)-1));
 %% COMPUTING IMAGE ENTROPY HERE
 
-EN=entropy(I2)
+EN=entropy(I2);
 max3=SF+EN+AG;
+end
