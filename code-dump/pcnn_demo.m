@@ -8,10 +8,9 @@ I=RGB;
 end
 I = double(I);
 S = I;
-
-%S(:, 128:256) = S(:, 128:256)*0.5;
+% show the original image
 subplot(1,2,1), imshow(uint8(S))
-%____________________________________
+%% initializing PCNN parameters
 [r, c] = size(S);
 Y = zeros(r,c); T = Y;
 W = fspecial('gaussian',7,1);
@@ -23,6 +22,7 @@ dT = exp(-alpha);
 Vt = 400;
 fire_num = 0;
 n = 0;
+%% running the PCNN main loop
 while fire_num < r*c
     n = n + 1;
     L = imfilter(Y,W,'symmetric');
@@ -41,6 +41,6 @@ while fire_num < r*c
 	T = T + n.*Y;
     fire_num = fire_num + sum(sum(Y));    
 end
-%____________________________________
+%% showing the segmented focus map
 %T = 256 - T;
 subplot(1,2,2), imshow(uint8(T))
