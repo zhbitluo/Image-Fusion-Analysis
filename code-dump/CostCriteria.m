@@ -38,7 +38,6 @@ SF=sqrt(RF^2+CF^2);
 % Here since Gmag represent Magnitude of Gradient so no need to take absolute value
 AG = sum(sum(Gmag))./(sqrt(2)*(size(I2,1)-1)*(size(I2,2)-1));
 %% COMPUTING IMAGE ENTROPY HERE
-
 EN=entropy(I2);
 max3=SF+EN+AG;
 end
