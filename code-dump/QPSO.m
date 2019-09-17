@@ -41,7 +41,7 @@ function out = QPSO(problem, params)
     particle = repmat(empty_particle, nPop, 1);
 
     % Initialize Global Best
-    GlobalBest.Cost = inf;
+    GlobalBest.Cost = 0;
     MBest=0;
 
     % Initialize Population Members
@@ -61,7 +61,7 @@ function out = QPSO(problem, params)
         particle(i).Best.Cost = particle(i).Cost;
 
         % Update Global Best
-        if particle(i).Best.Cost < GlobalBest.Cost
+        if particle(i).Best.Cost > GlobalBest.Cost
             GlobalBest = particle(i).Best;
         end
 
@@ -100,7 +100,7 @@ function out = QPSO(problem, params)
                 particle(i).Best.Cost = particle(i).Cost;
 
                 % Update Global Best
-                if particle(i).Best.Cost < GlobalBest.Cost
+                if particle(i).Best.Cost > GlobalBest.Cost
                     GlobalBest = particle(i).Best;
                 end            
 

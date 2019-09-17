@@ -11,9 +11,9 @@ clear;
 close all;
 
 %% Problem Definiton
-I=imread('a9.tif');
+%I=imread('a9.tif');
 
-problem.CostFunction = @(x) CostCriteria(I);  % Cost Function
+problem.CostFunction = @(x) CostCriteria(x);  % Cost Function
 problem.nVar = 3;       % Number of Unknown (Decision) Variables
 problem.VarMin =  -10;  % Lower Bound of Decision Variables
 problem.VarMax =  10;   % Upper Bound of Decision Variables
