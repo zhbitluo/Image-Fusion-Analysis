@@ -14,7 +14,7 @@ np=200;
 link_arrange=3;
 alpha_L=0.3;% 0.06931 Or 1
 alpha_Theta=0.2;
-beta=3;% 0.2 or 3
+beta=0.1;% 0.2 or 3
 vL=0.2;
 vTheta=20;
 

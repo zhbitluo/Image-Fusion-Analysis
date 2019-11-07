@@ -1,17 +1,17 @@
 %% importing the images
-I=imread('p30a.jpg');
-if size(I,3) ~= 1
-    I = rgb2gray(I);
-end
+I=imread('a15.tif');
+%if size(I,3) ~= 1
+%    I = rgb2gray(I);
+%end
 I = double(I);
-I2=imread('p30b.jpg');
-if size(I2,3) ~= 1
-    I2 = rgb2gray(I2);
-end
+I2=imread('b15.tif');
+%if size(I2,3) ~= 1
+%    I2 = rgb2gray(I2);
+%end
 I2 = double(I2);
 
-subplot(1,3,1), imshow(uint8(I))
-subplot(1,3,2), imshow(uint8(I2))
+subplot(1,3,1), imshow(I,[])
+subplot(1,3,2), imshow(I2,[])
 %% initializing parameters
 nTimes=1;
 del=0.0705;
@@ -47,7 +47,11 @@ for i=1:M
         end
     end
 end
+
+[Gx, Gy]=gradient(F);
+S=sqrt(Gx.*Gx+Gy.*Gy);
+sharpness=sum(sum(S))./(numel(Gx))
             
-subplot(1,3,3), imshow(uint8(F))
+subplot(1,3,3), imshow(F,[])
 %subplot(1,4,4), imshow(temp)
         
