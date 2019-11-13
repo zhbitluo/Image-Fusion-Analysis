@@ -1,4 +1,4 @@
-Copyright (c) 2011, Tolga Birdal
+Copyright (c) 2015, Jose Delpiano
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

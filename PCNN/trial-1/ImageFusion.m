@@ -51,7 +51,8 @@ end
 [Gx, Gy]=gradient(F);
 S=sqrt(Gx.*Gx+Gy.*Gy);
 sharpness=sum(sum(S))./(numel(Gx))
-          
+
+si_2=sharpness_index(F,0)
 subplot(1,3,3), imshow(F,[])
 %subplot(1,4,4), imshow(temp)
 
