@@ -1,10 +1,10 @@
 %% importing the images
-I=imread('a15.tif');
+I=imread('a1.tif');
 %if size(I,3) ~= 1
 %    I = rgb2gray(I);
 %end
 I = double(I);
-I2=imread('b15.tif');
+I2=imread('b1.tif');
 %if size(I2,3) ~= 1
 %    I2 = rgb2gray(I2);
 %end
@@ -51,7 +51,12 @@ end
 [Gx, Gy]=gradient(F);
 S=sqrt(Gx.*Gx+Gy.*Gy);
 sharpness=sum(sum(S))./(numel(Gx))
-            
+          
 subplot(1,3,3), imshow(F,[])
 %subplot(1,4,4), imshow(temp)
-        
+
+%imwrite(F,'fused.tif');
+%combImg = imfuse(I, I2, 'montage');
+%imwrite(combImg,'combined.tif');        
+
+%metrics=fusion_perform_fn(combImg,F)
