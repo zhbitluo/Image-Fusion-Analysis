@@ -51,7 +51,12 @@ end
 [Gx, Gy]=gradient(F);
 S=sqrt(Gx.*Gx+Gy.*Gy);
 sharpness=sum(sum(S))./(numel(Gx))
-            
+          
 subplot(1,3,3), imshow(F,[])
 %subplot(1,4,4), imshow(temp)
-        
+
+%imwrite(F,'fused.tif');
+%combImg = imfuse(I, I2, 'montage');
+%imwrite(combImg,'combined.tif');        
+
+%metrics=fusion_perform_fn(combImg,F)
