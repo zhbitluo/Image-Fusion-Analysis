@@ -1,10 +1,10 @@
 %% importing the images
-I=imread('a15.tif');
+I=imread('a1.tif');
 %if size(I,3) ~= 1
 %    I = rgb2gray(I);
 %end
 I = double(I);
-I2=imread('b15.tif');
+I2=imread('b1.tif');
 %if size(I2,3) ~= 1
 %    I2 = rgb2gray(I2);
 %end
