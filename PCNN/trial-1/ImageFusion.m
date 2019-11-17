@@ -48,12 +48,9 @@ for i=1:M
     end
 end
 
-[Gx, Gy]=gradient(F);
-S=sqrt(Gx.*Gx+Gy.*Gy);
-sharpness=sum(sum(S))./(numel(Gx))
-
-si_2=sharpness_index(F,0)
 subplot(1,3,3), imshow(F,[])
+
+performance= perform_metric(I,I2,F)
 %subplot(1,4,4), imshow(temp)
 
 %imwrite(F,'fused.tif');
